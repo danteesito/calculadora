@@ -14,8 +14,20 @@ function addNumber(num) {
         //aux.value = num;: Si value es igual a '0' o '-0', establece el valor del elemento input en num.
           aux.value = num;
       } else {
+          // Verificar si el número ingresado es en base octal
+          const isOctal = value.match(/^0[0-7]*$/);
+          if (isOctal) {
+              /*const decimal = parseInt(value, 8);: Convierte value de octal a decimal y lo asigna a la constante decimal.
+                esto remplasa el numero de octal a decimal  
+              */
+              const decimal = parseInt(value, 8);
+              aux.value = decimal + num;
+          } else {
+              aux.value += num;
+              
+          }
+      }
   } 
-}
 }
 /*
 Aki creo la funcion de addOperator para poner los operadores logicos.
