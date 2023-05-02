@@ -24,7 +24,6 @@ function addNumber(num) {
               aux.value = decimal + num;
           } else {
               aux.value += num;
-              
           }
       }
   } 
